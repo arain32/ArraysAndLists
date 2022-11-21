@@ -10,6 +10,7 @@ class LoadAndStoreTest {
 
     @BeforeEach
     void setUp() {
+
     }
 
     @AfterEach
@@ -18,31 +19,54 @@ class LoadAndStoreTest {
 
     @Test
     void loadIntArrayFromFile() {
-        assertEquals(null, "");
+        LoadAndStore loadAndStore = new LoadAndStore();
+        String filename = "testIntegerData1.txt";
+        assertEquals(4,loadAndStore.loadIntArrayFromFile(filename)[0]);
     }
 
     @Test
     void loadIntegerArrayListFromFile() {
-        assertEquals(null, "");
+
+        LoadAndStore loadAndStore = new LoadAndStore();
+        String filename = "testStringData3.txt";
+        System.out.println(loadAndStore.loadStringArrayListFromFile(filename));
+        assertEquals("Foo", loadAndStore.loadStringArrayListFromFile(filename).get(2));
     }
 
     @Test
     void loaddoubleArrayFromFile() {
-        assertEquals(null, "");
+        LoadAndStore loadAndStore = new LoadAndStore();
+        String filename = "testDoubleData2.txt";
+        System.out.println(loadAndStore.loadStringArrayListFromFile(filename));
+        assertEquals("6.34", loadAndStore.loadStringArrayListFromFile(filename).get(2));
     }
+
+
 
     @Test
     void loadDoubleArrayListFromFile() {
-        assertEquals(null, "");
+        LoadAndStore loadAndStore = new LoadAndStore();
+        String filename = "testDoubleData2.txt";
+        System.out.println(loadAndStore.loadStringArrayListFromFile(filename));
+        assertEquals("6.34", loadAndStore.loadStringArrayListFromFile(filename).get(2));
     }
 
     @Test
     void loadStringArrayFromFile() {
-        assertEquals(null, "");
+        LoadAndStore loadAndStore = new LoadAndStore();
+        String filename = "testStringData3.txt";
+        System.out.println(loadAndStore.loadStringArrayListFromFile(filename));
+        assertEquals("11.0001", loadAndStore.loadStringArrayListFromFile(filename).get(3));
+
     }
 
     @Test
     void loadStringArrayListFromFile() {
-        assertEquals(null, "");
+        LoadAndStore loadAndStore = new LoadAndStore();
+        String filename = "testStringData3.txt";
+        System.out.println(loadAndStore.loadStringArrayListFromFile(filename));
+        assertEquals("Lost in Space", loadAndStore.loadStringArrayListFromFile(filename).get(5));
+
+
     }
 }

@@ -5,9 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AverageDoubleArraysTest {
+    AverageDoubleArrays test;
+    double[]array;
 
     @BeforeEach
     void setUp() {
+        test = new AverageDoubleArrays();
+     array=new double[]{5.0,9.0,3.0};
     }
 
     @AfterEach
@@ -16,16 +20,17 @@ class AverageDoubleArraysTest {
 
     @Test
     void count() {
-        assertEquals(null, "");
+        assertEquals(array.length, test.count(array));
     }
 
     @Test
     void sum() {
-        assertEquals(null, "");
+
+        assertEquals(17.0, test.sum(array));
     }
 
     @Test
     void average() {
-        assertEquals(null, "");
+        assertEquals(17/3 ,test.average(array));
     }
 }

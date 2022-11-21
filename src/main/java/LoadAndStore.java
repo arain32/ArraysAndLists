@@ -53,7 +53,30 @@ public class LoadAndStore {
 
     public String[] loadStringArrayFromFile(String filename) { return null; }
 
-    public ArrayList<String> loadStringArrayListFromFile(String filename) { return null; }
+    public ArrayList<String> loadStringArrayListFromFile(String filename) {
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(filename));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String line = "";
+        ArrayList<String> result = new ArrayList<String>();
+
+        while (true) {
+            try {
+                if ((line = br.readLine()) == null) break; // break loop at end of file
+                if (line.startsWith("//")) continue; // ignore "//" comment lines
+                //String number = String.parseInt(line);
+                result.add(line);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
 
     //
     // Finally:
